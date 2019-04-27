@@ -71,6 +71,7 @@ module.exports = [
   {
     name: 'pg',
     versions: ['>=4'],
+    file: 'lib/index.js',
     patch (pg, tracer, config) {
       this.wrap(pg.Client.prototype, 'query', createWrapQuery(tracer, config))
     },
